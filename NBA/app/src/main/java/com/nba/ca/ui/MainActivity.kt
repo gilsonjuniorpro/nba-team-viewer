@@ -1,7 +1,8 @@
-package com.nba.ca
+package com.nba.ca.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.nba.ca.R
 
 class MainActivity : AppCompatActivity() {
 
