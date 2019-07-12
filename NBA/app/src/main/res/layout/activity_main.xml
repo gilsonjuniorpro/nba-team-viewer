@@ -5,6 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
         tools:context=".ui.MainActivity">
 
     <ProgressBar
@@ -22,21 +23,62 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
-            app:layout_constraintVertical_weight="1"
+            android:paddingBottom="?attr/actionBarSize"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="8dp" android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/view"
     />
-
     <TextView
-            android:id="@+id/tvEmptyView"
+            android:text=":: NBA Teams ::"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNbaTeams" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="@android:color/background_light"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-    />
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvNbaTeams" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center" />
+    <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp" app:srcCompat="@drawable/ic_sort_desc"
+            android:id="@+id/ivSortDesc"
+            app:layout_constraintTop_toTopOf="@+id/tvNbaTeams"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNbaTeams"
+            app:layout_constraintEnd_toStartOf="@+id/ivSortAsc" android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp" android:tint="#F57C00"/>
+    <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp" app:srcCompat="@drawable/ic_sort_asc"
+            android:id="@+id/ivSortAsc"
+            app:layout_constraintTop_toTopOf="@+id/ivSortDesc"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSortDesc" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" android:layout_marginRight="16dp" android:tint="#F57C00"/>
+    <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp" app:srcCompat="@drawable/ic_win"
+            android:id="@+id/ivSortWins"
+            app:layout_constraintTop_toTopOf="@+id/tvNbaTeams"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNbaTeams"
+            android:tint="#689F38" app:layout_constraintEnd_toStartOf="@+id/ivSortLosses" android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"/>
+    <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp" app:srcCompat="@drawable/ic_loss"
+            android:id="@+id/ivSortLosses"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNbaTeams"
+            app:layout_constraintTop_toTopOf="@+id/tvNbaTeams" android:tint="#D32F2F"
+            app:layout_constraintEnd_toStartOf="@+id/ivSortDesc" android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

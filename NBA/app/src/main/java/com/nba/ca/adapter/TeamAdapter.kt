@@ -24,7 +24,8 @@ class TeamAdapter(items : List<Team>,mContext: Context) : RecyclerView.Adapter<T
         holder.tvFullName.text = list[position].full_name
         holder.tvWin.text = list[position].wins.toString()
         holder.tvLosses.text = list[position].losses.toString()
-        holder.ivFlag.setOnClickListener { openDetailTeam(list[position]) }
+        //holder.ivFlag.setOnClickListener { openDetailTeam(list[position]) }
+        holder.layBase.setOnClickListener { openDetailTeam(list[position]) }
     }
 
     private fun openDetailTeam(team: Team) {
@@ -44,6 +45,7 @@ class TeamAdapter(items : List<Team>,mContext: Context) : RecyclerView.Adapter<T
         val tvFullName = view.tvFullName!!
         val tvWin = view.tvWin!!
         val tvLosses = view.tvLosses!!
+        val layBase = view.layBase!!
     }
 
 
