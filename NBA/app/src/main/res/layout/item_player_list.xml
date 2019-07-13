@@ -12,7 +12,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tvFisrtName"
-            tools:text="first name"
+            tools:text="@string/first_name"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
@@ -22,7 +22,7 @@
             android:id="@+id/tvLastName"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            tools:text="last name"
+            tools:text="@string/last_name"
             app:layout_constraintStart_toEndOf="@+id/tvFisrtName"
             android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
             android:textStyle="bold" android:layout_marginLeft="4dp" android:layout_marginStart="4dp"/>
@@ -31,18 +31,18 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvPosition" app:layout_constraintStart_toStartOf="@+id/tvFisrtName"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" tools:text="position" android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" tools:text="@string/position" android:textSize="12sp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvSeparator" app:layout_constraintStart_toEndOf="@+id/tvPosition"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" android:text="-" android:textSize="12sp"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" android:text="@string/separator_bar" android:textSize="12sp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvNumber" app:layout_constraintStart_toEndOf="@+id/tvSeparator"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" tools:text="number" android:textSize="12sp"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" tools:text="@string/number" android:textSize="12sp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

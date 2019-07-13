@@ -44,7 +44,7 @@
                 android:layout_marginTop="8dp"/>
 
         <TextView
-                android:text=":: Players ::"
+                android:text="@string/players"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvLabelPlayers"
@@ -79,36 +79,36 @@
                     android:layout_width="@dimen/icon_win_loss_size"
                     android:layout_height="@dimen/icon_win_loss_size"
                     android:src="@drawable/ic_win"
-                    android:tint="#689F38"/>
+                    android:tint="@color/color_wins"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tvWins"
-                    tools:text="number of wins"/>
+                    tools:text="@string/number_of_wins"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tvLabelWins"
                     android:layout_marginLeft="4dp"
-                    android:text="wins"/>
+                    android:text="@string/wins"/>
 
             <ImageView
                     android:layout_width="@dimen/icon_win_loss_size"
                     android:layout_height="@dimen/icon_win_loss_size"
                     android:src="@drawable/ic_loss"
                     android:layout_marginLeft="8dp"
-                    android:tint="#D32F2F"/>
+                    android:tint="@color/color_losses"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tvLosses"
-                    tools:text="number of losses"/>
+                    tools:text="@string/number_of_losses"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tvLabelLosses"
                     android:layout_marginLeft="4dp"
-                    android:text="losses"/>
+                    android:text="@string/losses"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         ivSortAsc.setOnClickListener{ downloadData("ASC") }
         ivSortWins.setOnClickListener{ downloadData("WINS") }
         ivSortLosses.setOnClickListener{ downloadData("LOSSES") }
-
     }
 
     fun downloadData(sort:String) {
@@ -78,6 +77,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
+        if(Utils.hasConnection(baseContext)){
+            tvStatus.text = " "
+        }else{
+            tvStatus.text = "OFFLINE"
+        }
+
         if(list != null && list!!.size > 0)
             listTeams.adapter = TeamAdapter(list!!, this)
     }

@@ -16,4 +16,5 @@ object Utils {
             connectivityManager.activeNetworkInfo.type == ConnectivityManager.TYPE_WIFI
         }
     }
+
 }
