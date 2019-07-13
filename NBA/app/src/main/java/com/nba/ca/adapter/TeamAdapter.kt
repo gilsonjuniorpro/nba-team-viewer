@@ -19,7 +19,7 @@ class TeamAdapter(items : List<Team>,mContext: Context) : RecyclerView.Adapter<T
     private var context = mContext
 
     override fun getItemCount(): Int {
-        return list!!.size
+        return list.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

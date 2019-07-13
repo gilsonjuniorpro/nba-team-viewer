@@ -22,8 +22,6 @@ android {
         }
     }
 
-    useLibrary 'org.apache.http.legacy'
-
     androidExtensions {
         experimental = true
     }

@@ -53,12 +53,12 @@ class MainActivity : AppCompatActivity() {
         doAsync {
             var response = TeamController.listTeams() as ResponseTeams
 
-            if(response?.teams != null) {
+            if(response.teams != null) {
                 list = when (sort) {
-                    "ASC" -> response!!.teams!!.sortedBy { team -> team.full_name } as MutableList<Team>
-                    "DESC" -> response!!.teams!!.sortedByDescending { team -> team.full_name } as MutableList<Team>
-                    "WINS" -> response!!.teams!!.sortedBy { team -> team.wins } as MutableList<Team>
-                    else -> response!!.teams!!.sortedBy { team -> team.losses } as MutableList<Team>
+                    "ASC" -> response.teams!!.sortedBy { team -> team.full_name } as MutableList<Team>
+                    "DESC" -> response.teams!!.sortedByDescending { team -> team.full_name } as MutableList<Team>
+                    "WINS" -> response.teams!!.sortedBy { team -> team.wins } as MutableList<Team>
+                    else -> response.teams!!.sortedBy { team -> team.losses } as MutableList<Team>
                 }
             }
 
