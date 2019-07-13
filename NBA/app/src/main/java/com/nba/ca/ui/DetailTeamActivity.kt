@@ -40,10 +40,12 @@ class DetailTeamActivity : AppCompatActivity() {
         listPlayers.addItemDecoration(mDividerItemDecoration)
         listPlayers.adapter = PlayerAdapter(list!!, this)
 
-        var urlImage = Dominios.URL_JSON_LOGO_IMAGE + team!!.logo!!.team_logo
+        if(team!!.logo != null) {
+            var urlImage = Dominios.URL_JSON_LOGO_IMAGE + team!!.logo!!.team_logo
 
-        Glide.with(this)
-            .load(urlImage)
-            .into(tvTeamFlag)
+            Glide.with(this)
+                .load(urlImage)
+                .into(tvTeamFlag)
+        }
     }
 }

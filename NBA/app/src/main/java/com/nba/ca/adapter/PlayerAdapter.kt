@@ -23,7 +23,7 @@ class PlayerAdapter(items : List<Player>,mContext: Context) : RecyclerView.Adapt
         holder.tvLastName.text = list[position].last_name
         holder.tvPosition.text = list[position].position
         holder.tvNumber.text = list[position].number.toString()
-        //holder.ivFlag.setOnClickListener { openDetailTeam(list[position]) }
+
         holder.layBase.setOnClickListener { openDetailPlayer(list[position]) }
     }
 

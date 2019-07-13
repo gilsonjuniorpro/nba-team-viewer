@@ -8,13 +8,17 @@ import com.nba.ca.service.TeamService
 object TeamController {
 
     fun listTeams(): ResponseTeams? {
+
+        //for better performance just uncomment the line below
+        //return TeamService.listTeams()
+
+        //and comment all these lines
+        /* */
         var responseTeam = TeamService.listTeams()
         var listTeam = responseTeam!!.teams!!.sortedBy { teams -> teams.full_name }
 
         var responseLogo = LogoService.listLogos()
         var listLogos = responseLogo!!.logos!!.sortedBy { logos -> logos.team_name }
-
-
 
         var teamsList = ArrayList<Team>()
         listTeam.forEachIndexed { i, value ->
@@ -25,10 +29,7 @@ object TeamController {
                 teamsList.add(team)
             }
         }
-
-        var responseTeams: ResponseTeams? = ResponseTeams(teamsList)
-
-        return responseTeams
+        return ResponseTeams(teamsList)
+        /* */
     }
-
 }
