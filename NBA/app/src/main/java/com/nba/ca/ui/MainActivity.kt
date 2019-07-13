@@ -1,19 +1,21 @@
 package com.nba.ca.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.StrictMode
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nba.ca.R
 import com.nba.ca.adapter.TeamAdapter
 import com.nba.ca.controller.TeamController
 import com.nba.ca.pojo.ResponseTeams
 import com.nba.ca.pojo.Team
+import com.nba.ca.util.Utils
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-import android.os.StrictMode
-import androidx.recyclerview.widget.DividerItemDecoration
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +31,8 @@ class MainActivity : AppCompatActivity() {
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
         }
+
+        Realm.init(this)
 
         downloadData(sort)
 
@@ -51,7 +55,11 @@ class MainActivity : AppCompatActivity() {
 
     fun downloadData(sort:String) {
         doAsync {
-            var response = TeamController.listTeams() as ResponseTeams
+            var response = if(Utils.hasConnection(baseContext)){
+                TeamController.listTeams() as ResponseTeams
+            }else{
+                TeamController.listTeamsFromCache() as ResponseTeams
+            }
 
             if(response.teams != null) {
                 list = when (sort) {
@@ -73,4 +81,7 @@ class MainActivity : AppCompatActivity() {
         if(list != null && list!!.size > 0)
             listTeams.adapter = TeamAdapter(list!!, this)
     }
+
+
+
 }

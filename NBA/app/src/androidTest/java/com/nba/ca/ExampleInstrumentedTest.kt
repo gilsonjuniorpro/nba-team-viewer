@@ -61,6 +61,12 @@ class ExampleInstrumentedTest {
     }
 
     @Test
+    fun verifyIfListTeamLoadsFromCache(){
+        var response = TeamController.listTeamsFromCache() as ResponseTeams
+        assertEquals(response.teams!![0].players!!.size, Dominios.AMOUNT_OF_PLAYERS)
+    }
+
+    @Test
     fun simulateClickOnSortAsc(){
         onView(withId(R.id.ivSortAsc)).perform(click())
     }
