@@ -4,7 +4,8 @@ class Dominios {
 
     companion object {
         const val URL_JSON_NBA = "https://raw.githubusercontent.com/scoremedia/nba-team-viewer/master/input.json"
-        //const val URL_JSON_NBA = "http://www.projectconnect.com.br/gilsonjuniorpro/nba.php"
+        const val URL_JSON_LOGO = "http://www.projectconnect.com.br/nba-php/api/logo/list.php"
+        const val URL_JSON_LOGO_IMAGE = "http://www.projectconnect.com.br/nba-php/images/"
 
     }
 

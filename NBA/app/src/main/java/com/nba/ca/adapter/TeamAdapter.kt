@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.nba.ca.ui.DetailTeamActivity
 import com.nba.ca.R
 import com.nba.ca.pojo.Team
+import com.nba.ca.util.Dominios
 import kotlinx.android.synthetic.main.item_team_list.view.*
 
 class TeamAdapter(items : List<Team>,mContext: Context) : RecyclerView.Adapter<TeamAdapter.ViewHolder>(){
@@ -25,6 +28,13 @@ class TeamAdapter(items : List<Team>,mContext: Context) : RecyclerView.Adapter<T
         holder.tvWin.text = list[position].wins.toString()
         holder.tvLosses.text = list[position].losses.toString()
         //holder.ivFlag.setOnClickListener { openDetailTeam(list[position]) }
+
+        var urlImage = Dominios.URL_JSON_LOGO_IMAGE + list[position].logo?.team_logo
+
+        Glide.with(context)
+            .load(urlImage)
+            .into(holder.ivFlag)
+
         holder.layBase.setOnClickListener { openDetailTeam(list[position]) }
     }
 

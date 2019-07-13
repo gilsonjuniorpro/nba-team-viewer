@@ -9,5 +9,6 @@ data class Team (
     var full_name : String?,
     var wins : Int?,
     var losses : Int?,
-    var players : List<Player>?
+    var players : List<Player>?,
+    var logo : Logo?
 ): Parcelable
