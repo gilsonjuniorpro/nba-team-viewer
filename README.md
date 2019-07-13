@@ -1,3 +1,22 @@
+# theScore
+
+This App was made as part of the interview process to theScore Company for an Android Developer Opportunity.
+
+The objective of this App is to use the json endpoint provided by theScore and show the information in the App with some requirements.
+
+## How is this App
+# Images
+<img src="http://www.projectconnect.com.br/github_imagens/Screenshot_20190712-222700.png" width="15%"></img>
+<img src="http://www.projectconnect.com.br/github_imagens/Screenshot_20190712-222705.png" width="15%"></img>
+<img src="http://www.projectconnect.com.br/github_imagens/Screenshot_20190712-222710.png" width="15%"></img>
+<img src="http://www.projectconnect.com.br/github_imagens/Screenshot_20190712-222724.png" width="15%"></img>
+
+-------------
+# Video
+[![Watch the video](http://www.projectconnect.com.br/github_imagens/thescore_capa.png)](https://youtu.be/ZqsAChIe-GM)
+
+-------------
+
 # theScore "NBA Team Viewer" Interview Question
 At theScore, we're always looking for intelligent and resourceful Android developers to join our growing team. To help us evaluate new talent, we have created this take-home interview question. This challenge would take few hours to finish, we advice to read the requirement carefully. If you have any question please don't hasitate to ask. 
 
