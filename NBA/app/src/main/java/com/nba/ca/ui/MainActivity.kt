@@ -2,6 +2,7 @@ package com.nba.ca.ui
 
 import android.os.Bundle
 import android.os.StrictMode
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -52,22 +53,28 @@ class MainActivity : AppCompatActivity() {
         ivSortLosses.setOnClickListener{ downloadData("LOSSES") }
     }
 
-    fun downloadData(sort:String) {
+    private fun downloadData(sort:String) {
         doAsync {
-            var response = if(Utils.hasConnection(baseContext)){
-                TeamController.listTeams() as ResponseTeams
-            }else{
-                TeamController.listTeamsFromCache() as ResponseTeams
+            try{
+                var response = if(Utils.hasConnection(baseContext)){
+                    TeamController.listTeams() as ResponseTeams
+                }else{
+                    TeamController.listTeamsFromCache() as ResponseTeams
+                }
+
+                if(response.teams != null) {
+                    list = when (sort) {
+                        "ASC" -> response.teams!!.sortedBy { team -> team.full_name } as MutableList<Team>
+                        "DESC" -> response.teams!!.sortedByDescending { team -> team.full_name } as MutableList<Team>
+                        "WINS" -> response.teams!!.sortedBy { team -> team.wins } as MutableList<Team>
+                        else -> response.teams!!.sortedBy { team -> team.losses } as MutableList<Team>
+                    }
+                }
+            }catch (e: Exception){
+                progress.visibility = View.GONE
+                Log.e("TAG", "error trying to get API information: $e")
             }
 
-            if(response.teams != null) {
-                list = when (sort) {
-                    "ASC" -> response.teams!!.sortedBy { team -> team.full_name } as MutableList<Team>
-                    "DESC" -> response.teams!!.sortedByDescending { team -> team.full_name } as MutableList<Team>
-                    "WINS" -> response.teams!!.sortedBy { team -> team.wins } as MutableList<Team>
-                    else -> response.teams!!.sortedBy { team -> team.losses } as MutableList<Team>
-                }
-            }
 
             uiThread {
                 progress.visibility = View.GONE
