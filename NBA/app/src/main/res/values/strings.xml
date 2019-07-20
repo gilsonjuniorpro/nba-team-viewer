@@ -12,4 +12,7 @@
     <string name="position">position</string>
     <string name="number">number</string>
     <string name="separator_bar">-</string>
+    <string name="detail_team">Detail Team</string>
+    <string name="number_label">Number:</string>
+    <string name="position_label">Position:</string>
 </resources>

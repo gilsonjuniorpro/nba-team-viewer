@@ -13,9 +13,22 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".ui.DetailTeamActivity">
+
+        <activity
+                android:name=".ui.DetailTeamActivity"
+                android:label="@string/detail_team"
+                android:launchMode="singleTop"
+                android:parentActivityName=".ui.MainActivity"
+                android:screenOrientation="portrait">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.MainActivity"/>
+
         </activity>
-        <activity android:name=".ui.MainActivity">
+
+        <activity android:name=".ui.MainActivity" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

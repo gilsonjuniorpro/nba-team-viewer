@@ -1,7 +1,9 @@
 package com.nba.ca.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.NavUtils
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -47,5 +49,14 @@ class DetailTeamActivity : AppCompatActivity() {
                 .load(urlImage)
                 .into(tvTeamFlag)
         }
+    }
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        NavUtils.navigateUpFromSameTask(this)
+        var it = Intent(baseContext, MainActivity::class.java)
+        startActivity(it)
+        finish()
     }
 }

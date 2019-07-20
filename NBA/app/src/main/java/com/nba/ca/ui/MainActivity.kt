@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
         }
-
         Realm.init(this)
 
         downloadData(sort)

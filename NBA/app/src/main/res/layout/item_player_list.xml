@@ -29,20 +29,33 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvPosition" app:layout_constraintStart_toStartOf="@+id/tvFisrtName"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            android:id="@+id/tvPosition"
+            android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" tools:text="@string/position" android:textSize="12sp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelPosition"
+            android:layout_marginStart="8dp" android:layout_marginLeft="8dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvSeparator" app:layout_constraintStart_toEndOf="@+id/tvPosition"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" android:text="@string/separator_bar" android:textSize="12sp"/>
+            android:id="@+id/tvNumber"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" tools:text="@string/number" android:textSize="12sp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"/>
     <TextView
+            android:text="@string/number_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvNumber" app:layout_constraintStart_toEndOf="@+id/tvSeparator"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName" tools:text="@string/number" android:textSize="12sp"/>
+            android:id="@+id/tvLabelNumber" android:textSize="12sp"
+            android:textStyle="bold" android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tvNumber"
+            android:layout_marginRight="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvFisrtName"/>
+    <TextView
+            android:text="@string/position_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvLabelPosition" android:textStyle="bold"
+            android:textSize="12sp" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/tvFisrtName" android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/tvFisrtName"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
