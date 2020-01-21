@@ -22,6 +22,14 @@ class TeamAdapter(items : List<Team>,mContext: Context) : RecyclerView.Adapter<T
         return list.size
     }
 
+    override fun getItemViewType(position: Int): Int {
+        if(position % 2 == 0){
+            return 0
+        }else{
+            return 1
+        }
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvFullName.text = list[position].full_name
         holder.tvWin.text = list[position].wins.toString()
@@ -45,9 +53,19 @@ class TeamAdapter(items : List<Team>,mContext: Context) : RecyclerView.Adapter<T
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(context).inflate(
-                R.layout.item_team_list,parent,false))
+        if(viewType == 0) {
+            return ViewHolder(
+                LayoutInflater.from(context).inflate(
+                    R.layout.item_team_list, parent, false
+                )
+            )
+        }else{
+            return ViewHolder(
+                LayoutInflater.from(context).inflate(
+                    R.layout.item_team_list_v2, parent, false
+                )
+            )
+        }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
