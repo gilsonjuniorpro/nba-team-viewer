@@ -91,3 +91,11 @@ Your task is to create an Android application that has two screens; a Team list,
 
 ### Help
 If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
+
+
+### Donation
+If this project help you reduce time to develop, you can buy me a cup of coffee :) 
+
+<a href="https://www.buymeacoffee.com/gilsonjuniorpro" target="_blank">
+    <img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" >
+</a>
